@@ -81,10 +81,7 @@ SoundManager = Class.extend({
 	//----------------------------
 	togglemute: function()
 	{
-		if(this._mainNode.gain.value>0)
-			this._mainNode.gain.value = 0;
-		else 
-			this._mainNode.gain.value =1;
+		this._mainNode.gain.value = (this._mainNode.gain.value + 1) % 2;
 	},
 	//----------------------------
 	stopAll: function()
